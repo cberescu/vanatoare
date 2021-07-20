@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
- <title>Vanatoare</title>
+ <title>Chestionar de intrebari pentru examenul de vanator</title>
 <%~ includeFile('./components/header.html',it) %>
 
 </head>
@@ -10,20 +10,27 @@
 	<%~ includeFile('./components/top.html',it) %>
 <div id="app" >
 		<div class="container">
-		<div >
-			<h4>Search a question</h4>
-				<input type="text" v-model="search">
-		</div>
-		<div  v-for="question in foundQuestions"  v-if="foundQuestions">
-				<h4>{{question.title}}</h4>
-				<dl>
-					<dt v-for="(item,name) in question.options" :key="item"><span :class="{bold: question.answer==name,red: question.givenAnswer==name}" >{{name}}) {{item}}</span> </dt>
-				</dl>
+			
+		<div class="content">
+			<div class="section">
+				<h4>Cauta raspunsul la o intrebare</h4>
+				<div class="control mb-6">
+					<input class="input" type="text" v-model="search" placeholder="">
+				</div>
+			
+				<div  v-for="question in foundQuestions" class="mb-6"  v-if="foundQuestions">
+						<h4>{{question.title}}</h4>
+						
+						<div v-for="(item,name) in question.options" class="message" :class="{'is-primary': question.answer==name}" :key="item"><div class="message-body p-3">{{name}}) {{item}} </div></div>
+						
+					</div>
+				
+				</div>
 			</div>
-		
 		</div>
 </div>
 </main>
 <script src="/js/home.js"></script>
+<script src="/js/menu.js"></script>
 </body>
 </html>

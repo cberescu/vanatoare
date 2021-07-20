@@ -233,7 +233,7 @@
   "22": {
     "id": 22,
     "title": "Apreciaţi care dintre trofeele de cerb comun prezentate este de selecţie:",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -244,7 +244,7 @@
   "23": {
     "id": 23,
     "title": "Care dintre ramurile trofeului prezentat poartă denumirea de ramura (raza) lupului?",
-    "images": true,
+    "images": 1,
     "options": {
       "a": "nr. 1;",
       "b": "nr. 2;",
@@ -255,7 +255,7 @@
   "24": {
     "id": 24,
     "title": "Care dintre ramurile  trofeului prezentat poartă denumirea de ramura (raza) ochiului?",
-    "images": true,
+    "images": 1,
     "options": {
       "a": "nr. 1;",
       "b": "nr. 2;",
@@ -266,7 +266,7 @@
   "25": {
     "id": 25,
     "title": "Care dintre ramurile trofeului prezentat poartă denumirea de ramura (raza) de gheţuri?",
-    "images": true,
+    "images": 1,
     "options": {
       "a": "nr. 1;",
       "b": "nr. 2;",
@@ -277,7 +277,7 @@
   "26": {
     "id": 26,
     "title": "Care dintre ramurile trofeului prezentat poartă denumirea de ramura (raza) mijlocie?",
-    "images": true,
+    "images": 1,
     "options": {
       "a": "nr. 1;",
       "b": "nr. 2;",
@@ -1575,7 +1575,7 @@
   "144": {
     "id": 144,
     "title": "Care din imaginile de mai jos reprezintă urma tipar, la mers liniştit, a mistreţului?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A",
       "b": "B",
@@ -1971,7 +1971,7 @@
   "180": {
     "id": 180,
     "title": "Care din imaginile de mai jos reprezintă urma pârtie a ursului?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -2356,7 +2356,7 @@
   "215": {
     "id": 215,
     "title": "Care din imaginile de mai jos reprezintă urmă pârtie a lupului?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -2534,10 +2534,20 @@
     "title": "Simţurile dezvoltate ale râsului sunt:",
     "images": false,
     "options": {
+      "a": "numai auzul;",
+      "b": "numai mirosul;",
+      "c": "auzul,vazul si mirosul."
+    },
+    "answer": "c"
+  },
+  "232": {
+    "id": 232,
+    "title": "Ce specie de interes cinegetic este prezentată în imaginea de mai jos:",
+    "images": 1,
+    "options": {
       "a": "pisică sălbatică;",
       "b": "râs;",
-      "c": "jder de piatră.",
-      "!": "32. Ce specie de interes cinegetic este prezentată în imaginea de mai jos:"
+      "c": "jder de piatră."
     },
     "answer": "b"
   },
@@ -2631,7 +2641,7 @@
   },
   "241": {
     "id": 241,
-    "title": "Sub aspectul comportamentului social, masculul de pisic[ sălbatică trăieşte:",
+    "title": "Sub aspectul comportamentului social, masculul de pisică sălbatică trăieşte:",
     "images": false,
     "options": {
       "a": "exclusiv solitar;",
@@ -2709,7 +2719,7 @@
   "248": {
     "id": 248,
     "title": "Ce specie din fauna României este reprezentată în imagine?",
-    "images": true,
+    "images": 1,
     "options": {
       "a": "pisică domestică;",
       "b": "pisică sălbatică;",
@@ -3226,7 +3236,7 @@
   "295": {
     "id": 295,
     "title": "Care din imaginea alăturată reprezintă vidra?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -3303,7 +3313,7 @@
   "302": {
     "id": 302,
     "title": "Care din imaginea alăturată reprezintă jderul de piatră?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -3314,7 +3324,7 @@
   "303": {
     "id": 303,
     "title": "Care din imaginea alăturată reprezintă jderul de copac?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -3559,10 +3569,10 @@
     "images": false,
     "options": {
       "a": "o dată pe an;",
-      "b": ") de 3-4 ori pe an;",
+      "b": "de 3-4 ori pe an;",
       "c": "de 4-5 ori pe an."
     },
-    "answer": ""
+    "answer": "b"
   },
   "326": {
     "id": 326,
@@ -3633,7 +3643,7 @@
   "332": {
     "id": 332,
     "title": "Care din imaginea alăturată reprezintă hermelina?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -3886,7 +3896,7 @@
   "355": {
     "id": 355,
     "title": "Care din imaginile de mai jos reprezintă raţa mare?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -3930,7 +3940,7 @@
   "359": {
     "id": 359,
     "title": "Care din imaginile de mai jos reprezintă raţa cârâitoare?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -3963,7 +3973,7 @@
   "362": {
     "id": 362,
     "title": "Care din imaginile de mai jos reprezintă raţa mică?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -3996,7 +4006,7 @@
   "365": {
     "id": 365,
     "title": "Care din imaginile de mai jos reprezintă raţa fluierătoare?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4029,7 +4039,7 @@
   "368": {
     "id": 368,
     "title": "Care din imaginile de mai jos reprezintă raţa suliţar?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4073,7 +4083,7 @@
   "372": {
     "id": 372,
     "title": "Care din imaginile de mai jos reprezintă raţa lingurar?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4095,7 +4105,7 @@
   "374": {
     "id": 374,
     "title": "Care din imaginile de mai jos reprezintă raţa cu cap castaniu?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4117,7 +4127,7 @@
   "376": {
     "id": 376,
     "title": "Care din imaginile de mai jos reprezintă raţa moţată?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4139,7 +4149,7 @@
   "378": {
     "id": 378,
     "title": "Care din imaginile de mai jos reprezintă raţa pestriţă?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4183,7 +4193,7 @@
   "382": {
     "id": 382,
     "title": "Care din imaginile de mai jos reprezintă raţa sunătoare?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4216,7 +4226,7 @@
   "385": {
     "id": 385,
     "title": "Care din imaginile de mai jos reprezintă raţa cu cap negru?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4293,7 +4303,7 @@
   "392": {
     "id": 392,
     "title": "Care din imaginile de mai jos reprezintă gâsca de vară?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A",
       "b": "B",
@@ -4315,7 +4325,7 @@
   "394": {
     "id": 394,
     "title": "Care din imaginile de mai jos reprezintă gâsca de semănătură?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4348,7 +4358,7 @@
   "397": {
     "id": 397,
     "title": "Care din imaginile de mai jos reprezintă gârliţa mare?",
-    "images": false,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4370,7 +4380,7 @@
   "399": {
     "id": 399,
     "title": "Care din imaginile de mai jos reprezintă cormoranul mare?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4392,7 +4402,7 @@
   "401": {
     "id": 401,
     "title": "Care din imaginile de mai jos reprezintă becaţina comună?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4414,7 +4424,7 @@
   "403": {
     "id": 403,
     "title": "Care din imaginile de mai jos reprezintă sitarul de pădure?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4436,7 +4446,7 @@
   "405": {
     "id": 405,
     "title": "Care din imaginile de mai jos reprezintă ciocârlia de câmp?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4447,7 +4457,7 @@
   "406": {
     "id": 406,
     "title": "Care din imaginile de mai jos reprezintă sturzul de iarnă (cocoşarul)?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4469,7 +4479,7 @@
   "408": {
     "id": 408,
     "title": "Care din imaginile de mai jos reprezintă sturzul de vâsc?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4480,7 +4490,7 @@
   "409": {
     "id": 409,
     "title": "Care din imaginile de mai jos reprezintă sturzul viilor?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4502,7 +4512,7 @@
   "411": {
     "id": 411,
     "title": "Care din imaginile de mai jos reprezintă porumbelul gulerat?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4524,7 +4534,7 @@
   "413": {
     "id": 413,
     "title": "Care din imaginile de mai jos reprezintă porumbelul de scorbură?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4590,7 +4600,7 @@
   "419": {
     "id": 419,
     "title": "Care din imaginile de mai jos reprezintă turturica?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4612,7 +4622,7 @@
   "421": {
     "id": 421,
     "title": "Care din imaginile de mai jos reprezintă guguştiucul?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4634,7 +4644,7 @@
   "423": {
     "id": 423,
     "title": "Care din imaginile de mai jos reprezintă cioara grivă?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4656,7 +4666,7 @@
   "425": {
     "id": 425,
     "title": "Care din imaginile de mai jos reprezintă cioara de semănătură?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4678,7 +4688,7 @@
   "427": {
     "id": 427,
     "title": "Care din imaginile de mai jos reprezintă gaiţa?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4876,7 +4886,7 @@
   "445": {
     "id": 445,
     "title": "Care din imaginile de mai jos reprezintă stăncuţa?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4887,7 +4897,7 @@
   "446": {
     "id": 446,
     "title": "Care din imaginile de mai jos reprezintă nagâţul?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -4898,7 +4908,7 @@
   "447": {
     "id": 447,
     "title": "Care din imaginile de mai jos reprezintă corbul?",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -5019,7 +5029,7 @@
   "458": {
     "id": 458,
     "title": "Care din imaginile de mai jos reprezintă femela de fazan:",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -5250,7 +5260,7 @@
   "479": {
     "id": 479,
     "title": "Care din imaginile de mai jos reprezintă masculul de potârniche:",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -5382,7 +5392,7 @@
   "491": {
     "id": 491,
     "title": "Care din imaginile de mai jos reprezintă prepeliţa:",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -5536,7 +5546,7 @@
   "505": {
     "id": 505,
     "title": "Care din imaginile de mai jos reprezintă masculul de cocoş de munte:",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -5690,7 +5700,7 @@
   "519": {
     "id": 519,
     "title": "Care din imaginile de mai jos reprezintă masculul de cocoş de mesteacăn:",
-    "images": true,
+    "images": 3,
     "options": {
       "a": "A;",
       "b": "B;",
@@ -5716,8 +5726,7 @@
     "options": {
       "a": "păduri de mesteacăn;",
       "b": "păduri de fag;",
-      "c": "jnepenişuri şi golul alpin.",
-      "C": "PITOLUL II  - LEGISLAŢIE ÎN DOMENIUL CINEGETIC"
+      "c": "jnepenişuri şi golul alpin."
     },
     "answer": "c"
   },
@@ -7202,8 +7211,7 @@
     "options": {
       "a": "în raţele care zboară în stol;",
       "b": "în gâştele care  zboară spre locul de hrănire;",
-      "c": "în potârnichile grupate în stol iarna pe zăpadă.",
-      "C": "PITOLUL IV.  - CHINOLOGIE"
+      "c": "în potârnichile grupate în stol iarna pe zăpadă."
     },
     "answer": "c"
   },
@@ -7566,8 +7574,7 @@
     "options": {
       "a": "hepatita virală;",
       "b": "cisticercoza;",
-      "c": "pasteureloza.",
-      "C": "PITOLUL V. - BOLI ALE VÂNATULUI"
+      "c": "pasteureloza."
     },
     "answer": "b"
   },
@@ -7798,8 +7805,7 @@
     "options": {
       "a": "răspândire în masă şi pe teritorii mari a unei boli contagioase la animale;",
       "b": "răspândire selectivă pe teritorii restrânse a unei boli contagioase la animale;",
-      "c": "boală contagioasă care se manifestă doar în ferme şi crescătorii de vânat.",
-      "C": "PITOLUL VI  - ARME, MUNIŢII ŞI ECHIPAMENTE DE VÂNĂTOARE"
+      "c": "boală contagioasă care se manifestă doar în ferme şi crescătorii de vânat."
     },
     "answer": "a"
   },
@@ -8272,8 +8278,7 @@
     "options": {
       "a": "atârnarea de centură a păsărilor vânate ;",
       "b": "transportarea vânatului din fondul cinegetic;",
-      "c": "agăţarea pe perete a trofeelor de vânat.",
-      "C": "PITOLUL VII  - MANAGEMENTUL SPECIILOR DE INTERES VÂNĂTORESC"
+      "c": "agăţarea pe perete a trofeelor de vânat."
     },
     "answer": "a"
   },
@@ -10993,16 +10998,5 @@
       "c": "gazarea vizuinilor."
     },
     "answer": "b"
-  },
-  "NaN": {
-    "id": null,
-    "title": "",
-    "images": false,
-    "options": {
-      "a": "",
-      "b": "",
-      "c": ""
-    },
-    "answer": ""
   }
 }

@@ -2,77 +2,28 @@
 <html>
 <head>
  <title>Vanatoare</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Google Fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+<%~ includeFile('./components/header.html',it) %>
 
-<!-- CSS Reset -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-
-<!-- Milligram CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
-
-<!-- You should properly set the path from the main file. -->
-<script src="https://unpkg.com/vue@next"></script>
-<style>
-	.bold {
-		font-weight: bold;
-	}
-	.red {
-		color: brown;
-	}
-	input:focus {
-    box-shadow: none;
-}
-.wrapper>.container {
-    padding-bottom: 7.5rem;
-    padding-top: 7.5rem;
-}
-.button:focus, .button:hover,
-button:focus,
-button:hover,
-input[type='button']:focus,
-input[type='button']:hover,
-input[type='reset']:focus,
-input[type='reset']:hover,
-input[type='submit']:focus,
-input[type='submit']:hover {
-  background-color: #843ab1;
-  border-color: #843ab1;
-  color: #fff;
-  outline: 0;
-}
-
-</style>
 </head>
 <body>
+<main class="wrapper">
+	<%~ includeFile('./components/top.html',it) %>
 <div id="app" >
-	<main class="wrapper">
-		<div class="container" v-if="activeQuestion>0 && !testCompleted">
-			<h4>{{activeQuestion}}. {{Question}}</h4>
-				<dl>
-					<dt v-for="(item,name) in availableAnswers" :key="item"><input v-model="selectedOption" type="radio" :value="name" :id="name" name="answer"> <label :for="name" class="label-inline" :class="{bold: showResult&&oQuestion.answer==name}">{{name}}) {{item}}</label></dt>
-				</dl>
-			<div class="row" v-if="oQuestion.images">
-				<div class="column" v-for="(item,name) in availableImages">
-					<p style="text-align: center; font-weight: bold; font-size: 18px;">{{name}}</p>
-					<img   :src="item" >
-				</div>
-			</div>
-			<button type="button" @click="next">{{labelBtnNext}}</button>
+		<div class="container">
+		<div >
+			<h4>Search a question</h4>
+				<input type="text" v-model="search">
 		</div>
-		<div class="container" v-if="testCompleted">
-			<h3>{{stats.success.length}} din 30 raspunse corect</h3>
-			<div v-for="question in stats.fail">
+		<div  v-for="question in foundQuestions"  v-if="foundQuestions">
 				<h4>{{question.title}}</h4>
 				<dl>
 					<dt v-for="(item,name) in question.options" :key="item"><span :class="{bold: question.answer==name,red: question.givenAnswer==name}" >{{name}}) {{item}}</span> </dt>
 				</dl>
 			</div>
+		
 		</div>
-	</main>
 </div>
-
+</main>
 <script src="/js/home.js"></script>
 </body>
 </html>

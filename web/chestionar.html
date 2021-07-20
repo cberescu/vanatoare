@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <title>Vanatoare</title>
+ <%~ includeFile('./components/header.html',it) %>
+</head>
+<body>
+<main class="wrapper mb-3">
+	<%~ includeFile('./components/top.html',it) %>
+<div id="app">
+	
+		<div class="container" v-if="activeQuestion>0 && !testCompleted">
+			<div class="content">
+			<h4>{{activeQuestion}}. {{oQuestion.title}}</h4>
+					<div class="message" v-for="(item,name) in oQuestion.options" :class="{'is-primary': showResult&&oQuestion.answer==name}" :key="item"><div class="message-body p-3"><label><input class="radio" v-model="selectedOption" type="radio" :value="name" :id="name" name="answer"> {{name}}) {{item}}</label></div></div>
+			<div class="columns" v-if="oQuestion.images">
+				<div class="column" v-for="item in oQuestion.images">
+					<p style="text-align: center; font-weight: bold; font-size: 18px;">{{['A','B','C'][(item-1)]}}</p>
+					<div style="text-align: center;"><img style="max-width: 300px;":src="'/images/'+oQuestion.id+'_'+['a','b','c'][(item-1)]+'.jpg'" ></div>
+				</div>
+			</div>
+			<button class="button is-info" type="button" @click="next">{{labelBtnNext}}</button>
+			</div>
+		</div>
+		<div class="container" v-if="testCompleted">
+			<div class="content">
+				<h3>{{stats.success.length}} din 30 raspunse corect</h3>
+				<div v-for="question in stats.fail" class="mb-6">
+					<h4>{{question.title}}</h4>
+					
+						<div v-for="(item,name) in question.options" class="message" :class="{'is-primary': question.answer==name,'is-danger': question.givenAnswer==name}" :key="item"><div class="message-body p-3">{{name}}) {{item}}</div></div>
+					
+				</div>
+			</div>
+		</div>
+	
+</div>
+</main>
+<script src="/js/chestionar.js"></script>
+</body>
+</html>

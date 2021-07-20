@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <title>Vanatoare</title>
+<%~ includeFile('./components/header.html',it) %>
+</head>
+<body>
+<main class="wrapper ">
+	<%~ includeFile('./components/top.html',it) %>
+<div id="app" >
+		<div class="container" v-if="sectionVisible=='capitole'">
+			<div class="columns m-0" v-for="sections in sectionRows">
+				<div class="column" v-for="section in sections">
+					<div class="box section-box" @click="selectCapitol(section.id)">
+						<div class="columns">
+							<div class="column" :class="{'is-two-thirds':section.stats && section.stats.fail.length}">
+    							<h4>{{section.title}}</h4>
+  							</div>
+							<div class="column has-text-right" v-if="section.stats && section.stats.fail.length">
+								<button class="button is-danger is-light is-small" type="button" @click.stop="gresite(section.id)">{{section.stats.fail.length}} Raspunsuri gresite</button>
+							</div>
+						</div>
+						<p class="mt-2">	
+							Corecte {{section.stats ? section.stats.success.length : 0}} din {{section.to-section.from+1}} din care {{section.stats ? section.stats.fail.length : 0}} gresite
+							<progress class="progress is-link" :value="section.stats?(section.stats.success.length*100)/(section.to-section.from+1):0" max="100">0%</progress>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container mb-6" v-if="(sectionVisible=='chestionar') && (activeQuestion>0) && !testCompleted">
+			<div class="content">
+				
+					<nav class="level">
+						<div class="level-left"></div>
+						<div class="level-right">
+							<div class="mr-2">
+								<div class="tags has-addons">
+									<span class="tag is-danger">{{selectedCapitol.stats?selectedCapitol.stats.fail.length:0}}</span>
+									<span class="tag is-primary">{{selectedCapitol.stats?selectedCapitol.stats.success.length:0}}</span>
+								</div>
+							</div>
+							<div>
+								<div class="tags has-addons ">
+									<span class="tag">{{questionIndex}}</span>
+									<span class="tag is-info">{{totalQuestionsInSection}}</span>
+								</div>
+							</div>
+						</div>
+					</nav>
+
+				<progress class="progress is-link" v-if="percentOfSection" :value="percentOfSection" max="100">{{percentOfSection}}%</progress>
+				<h4>{{activeQuestion}}. {{oQuestion.title}}</h4>
+
+						<div class="message" v-for="(item,name) in oQuestion.options" :class="{'is-primary': showResult&&oQuestion.answer==name}" :key="item"><div class="message-body p-3"><label><input v-model="selectedOption" type="radio" :value="name" :id="name" name="answer"> {{name}}) {{item}}</label></div></div>
+				<div class="columns" v-if="oQuestion.images">
+					<div class="column" v-for="item in oQuestion.images">
+						<p style="text-align: center; font-weight: bold; font-size: 18px;">{{['A','B','C'][(item-1)]}}</p>
+						<div style="text-align: center;"><img   :src="'/images/'+oQuestion.id+'_'+['a','b','c'][(item-1)]+'.jpg'" ></div>
+					</div>
+				</div>
+			</div>
+			<button class="button is-info" type="button" @click="next">{{labelBtnNext}}</button>
+		</div>
+		<div class="container mb-6" v-if="testCompleted">
+			<div class="content">
+				<h3 v-if="!retryFailed">{{selectedCapitol.stats.success.length}} din {{totalQuestionsInSection}} raspunse corect</h3>
+				<div v-for="index in selectedCapitol.stats.fail" class="mb-6">
+					<h4>{{questions[index].title}}</h4>
+						<div v-for="(item,name) in questions[index].options" class="message" :class="{'is-primary': questions[index].answer==name,'is-danger': ((questions[index].givenAnswer==name) &&  (questions[index].answer!=questions[index].givenAnswer))}" :key="item"><div class="message-body p-3">{{name}}) {{item}}</div></div>
+				</div>
+			</div>
+			<button class="button is-info" type="button" @click="inapoi">Inapoi la sectiuni</button>
+		</div>
+	
+</div>
+</main>
+<script src="/js/chestionar-capitole.js"></script>
+</body>
+</html>

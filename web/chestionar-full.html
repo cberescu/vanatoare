@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <title>Vanatoare</title>
+
+<%~ includeFile('./components/header.html',it) %>
+</head>
+<body>
+<main class="wrapper">
+	<%~ includeFile('./components/top.html',it) %>
+<div id="app" >
+	
+		<div class="container" v-if="!testCompleted">
+			<div class="content">
+				<div v-for="(question,key) in questions" class="mb-6">
+					<h4>{{key}}. {{question.title}}</h4>
+						
+					<div class="message" v-for="(item,name) in question.options" :key="item" :class="{'is-primary': showResult&&question.answer==name}"><div class="message-body p-3"><label><input @click="setAnswer(key,name)" type="radio" :value="name" :id="key+name" :name="'answer'+key"> {{name}}) {{item}}</label></div></div>
+						
+					<div class="columns" v-if="question.images">
+						<div class="column" v-for="item in question.images">
+							<p style="text-align: center; font-weight: bold; font-size: 18px;">{{['A','B','C'][(item-1)]}}</p>
+							<div style="text-align: center;"><img style="max-width: 300px;" :src="'/images/'+question.id+'_'+['a','b','c'][(item-1)]+'.jpg'" ></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="button is-info" type="button" @click="check">Verifica</button>
+		</div>
+		<div class="container" v-if="testCompleted">
+			<div class="content">
+				<h3>{{stats.success.length}} din 30 raspunse corect</h3>
+				<div v-for="question in stats.success" class="mb-6">
+					<h4>{{question.title}}</h4>
+					
+					<div class="message" v-for="(item,name) in question.options" :key="item" :class="{'is-primary': question.answer==name}"><div class="message-body p-3" ><span  >{{name}}) {{item}}</span> </div></div>
+					
+				</div>
+				<div v-for="question in stats.fail">
+					<h4>{{question.title}}</h4>
+					
+					<div class="message" v-for="(item,name) in question.options" :key="item" :class="{'is-primary': question.answer==name,'is-danger': question.selectedOption==name}"><div class="message-body p-3" ><span  >{{name}}) {{item}}</span> </div></div>
+					
+				</div>
+			</div>
+		</div>
+	
+</div>
+</main>
+<script src="/js/chestionar-full.js"></script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const readline = require('readline');
 const path = require('path');
+const resolve = require('path').resolve;
 const fastify = require('fastify')({
   logger:true,
   ignoreTrailingSlash: true
@@ -76,24 +77,143 @@ function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
+
+fastify.register(require('point-of-view'), {
+  engine: {
+    eta: require('eta')
+  },
+  root:'web',
+  options: {
+    filename: resolve('web')
+  }
+})
+
 oQuestions = JSON.parse(fs.readFileSync(path.join(__dirname,'questions.json'), 'utf8'));
+let capitole = {
+		"1": {
+			id:1,
+			title: 'CAPITOLUL I , SUBCAPITOLUL I. A -  MAMIFERE MARI',
+			from:1,
+			to: 251
+		},
+		"2": {
+			id:2,
+			title: 'CAPITOLUL I , SUBCAPITOLUL I. B -  MAMIFERE MICI',
+			from:252,
+			to: 341
+		},
+		"3": {
+			id:3,
+			title: 'CAPITOLUL I , SUBCAPITOLUL I. C -  PASARI',
+			from:342,
+			to: 521
+		},
+		"4": {
+			id:4,
+			title: 'CAPITOLUL II - LEGISLAŢIE IN DOMENIUL CINEGETIC',
+			from:522,
+			to: 618
+		},
+		"5": {
+			id:5,
+			title: 'CAPITOLUL III - ETICĂ VANATOREASCA',
+			from:619,
+			to: 656
+		},
+		"6": {
+			id:6,
+			title: 'CAPITOLUL IV - CHINOLOGIE',
+			from:657,
+			to: 689
+		},
+		"7": {
+			id:7,
+			title: 'CAPITOLUL V - BOLI ALE VÂNATULUI',
+			from:690,
+			to: 710
+		},
+		"8": {
+			id:8,
+			title: 'CAPITOLUL VI - ARME, MUNIŢII ŞI ECHIPAMENTE DE VÂNĂTOARE',
+			from:711,
+			to: 753
+		},
+		"9": {
+			id:9,
+			title: 'CAPITOLUL VII - MANAGEMENTUL SPECIILOR DE INTERES VÂNĂTORESC',
+			from:754,
+			to: 874
+		},
+		"10": {
+			id:10,
+			title: 'CAPITOLUL VIII - ORGANIZAREA ȘI PRACTICAREA VÂNĂTORII',
+			from:875,
+			to: 1000
+		}
+	}
 
 fastify.register(require('fastify-static'), {
   root: path.join(__dirname,'web'),
   //prefix: '/web/', // optional: default '/'
 })
+fastify.get('/', async function (req, reply) {
+	reply.view('index.html',{'page':'home'})
+})
+fastify.get('/c', async function (req, reply) {
+	reply.view('chestionar.html',{'page':'chestionar'})
+})
+fastify.get('/cf', async function (req, reply) {
+	reply.view('chestionar-full.html',{'page':'chestionar-full'})
+})
+fastify.get('/cc', async function (req, reply) {
+	reply.view('chestionar-capitole.html',{'page':'chestionar-capitole'})
+})
 
 fastify.get('/chestionar.json', async function (req, reply) {
-  let questions = {
 
-  }
+	
+	let questions = {
 
-  for (let i=1;i<=30;i++) {
-	  let rNumber = getRandomArbitrary(1,1001);
-	  questions[i] = oQuestions[rNumber];
-  }
+	}
+	let totalIntrebari = 0;
+	let leftPercent= 0;
+	for (const [key, value] of Object.entries(capitole)) {
+		
+		let percentOfTotal = (value.to-value.from+1)*100/1000;
+		let totalIntrebariCapitol = percentOfTotal*30/100
+		leftPercent += Math.ceil(totalIntrebariCapitol)-totalIntrebariCapitol;
+		totalIntrebariCapitol = Math.floor(totalIntrebariCapitol)
+
+		if (leftPercent>1) {
+			leftPercent = Math.ceil(leftPercent)-leftPercent;
+			totalIntrebariCapitol++;
+		}
+		let i=1;
+		while (i<=totalIntrebariCapitol) {
+			let rNumber = getRandomArbitrary(value.from,(value.to+1));
+			for (const question of Object.entries(questions)) {
+				if (question.id==rNumber) {
+					console.log('duplicate found',rNumber);
+					continue;
+				}
+			}
+			questions[(totalIntrebari+i)] = oQuestions[rNumber];
+			i++;
+		}
+		totalIntrebari+=totalIntrebariCapitol;
+	}
+	
+	if (totalIntrebari<30)
+	for (let i=totalIntrebari;i<=30;i++) {
+		let rNumber = getRandomArbitrary(1,1001);
+		questions[i] = oQuestions[rNumber];
+	}
   
   return reply.send(questions)
+})
+
+fastify.get('/all.json', async function (req, reply) {
+  return reply.send({questions:oQuestions,capitole:capitole})
 })
 
 // Run the server!

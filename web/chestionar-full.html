@@ -39,7 +39,7 @@
 						<div class="message" v-for="(item,name) in question.options" :key="item" :class="{'is-primary': question.answer==name}"><div class="message-body p-3" ><span  >{{name}}) {{item}}</span> </div></div>
 						
 					</div>
-					<div v-for="question in stats.fail">
+					<div v-for="question in stats.fail" class="mb-6">
 						<h4>{{question.title}}</h4>
 						
 						<div class="message" v-for="(item,name) in question.options" :key="item" :class="{'is-primary': question.answer==name,'is-danger': question.selectedOption==name}"><div class="message-body p-3" ><span  >{{name}}) {{item}}</span> </div></div>

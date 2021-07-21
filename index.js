@@ -168,6 +168,9 @@ fastify.get('/cf', async function (req, reply) {
 fastify.get('/cc', async function (req, reply) {
 	reply.view('chestionar-capitole.html',{'page':'chestionar-capitole'})
 })
+fastify.get('/cr', async function (req, reply) {
+	reply.view('chestionar-raspunsuri.html',{'page':'chestionar-raspunsuri'})
+})
 
 fastify.get('/chestionar.json', async function (req, reply) {
 
@@ -191,7 +194,7 @@ fastify.get('/chestionar.json', async function (req, reply) {
 		let i=1;
 		while (i<=totalIntrebariCapitol) {
 			let rNumber = getRandomArbitrary(value.from,(value.to+1));
-			for (const question of Object.entries(questions)) {
+			for (const [index,question] of Object.entries(questions)) {
 				if (question.id==rNumber) {
 					console.log('duplicate found',rNumber);
 					continue;
@@ -203,12 +206,22 @@ fastify.get('/chestionar.json', async function (req, reply) {
 		totalIntrebari+=totalIntrebariCapitol;
 	}
 	
-	if (totalIntrebari<30)
-	for (let i=totalIntrebari;i<=30;i++) {
-		let rNumber = getRandomArbitrary(1,1001);
-		questions[i] = oQuestions[rNumber];
+	if (totalIntrebari<30){
+		i=totalIntrebari+1;
+		while (i<=30) {
+			let rNumber = getRandomArbitrary(1,1001);
+			for (const [index,question] of Object.entries(questions)) {
+				console.log('check',question.id,rNumber);
+				if (question.id==rNumber) {
+					console.log('duplicate found',rNumber);
+					continue;
+				}
+			}
+			questions[i] = oQuestions[rNumber];
+			i++;
+		}
+		
 	}
-  
   return reply.send(questions)
 })
 

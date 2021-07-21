@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <title>Teste grila pentru examenul de vanator</title>
+<%~ includeFile('./components/header.html',it) %>
+</head>
+<body>
+<main class="wrapper ">
+	<%~ includeFile('./components/top.html',it) %>
+<div id="app" >
+		
+		<div class="container" v-if="sectionVisible=='capitole'">
+			<div class="section">
+				<div class="columns m-0" v-for="sections in sectionRows">
+					<div class="column" v-for="section in sections">
+						<div class="box section-box" @click="selectCapitol(section.id)">
+							<h4>{{section.title}}</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container mb-6" v-if="(sectionVisible=='chestionar')">
+			<div class="section">
+				<div class="content">
+					<h3>Intrebari si raspunsuri la {{selectedCapitol.title}}</h3>
+					<div v-for="index in totalQuestionsInSection" class="mb-6">
+						<h4>{{index+selectedCapitol.from-1}}. {{questions[(index+selectedCapitol.from-1)].title}}</h4>
+							<div v-for="(item,name) in questions[(index+selectedCapitol.from-1)].options" class="message" :class="{'is-primary': questions[(index+selectedCapitol.from-1)].answer==name}" :key="item"><div class="message-body p-3">{{name}}) {{item}}</div></div>
+					</div>
+				</div>
+				<button class="button is-info" type="button" @click="inapoi">Inapoi la sectiuni</button>
+			</div>
+		</div>
+		
+	
+</div>
+</main>
+<script src="/js/chestionar-raspunsuri.js"></script>
+<script src="/js/menu.js"></script>
+</body>
+</html>

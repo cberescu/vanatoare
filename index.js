@@ -159,16 +159,16 @@ fastify.register(require('fastify-static'), {
 fastify.get('/', async function (req, reply) {
 	reply.view('index.html',{'page':'home'})
 })
-fastify.get('/c', async function (req, reply) {
+fastify.get('/chestionar-examen-vanator.html', async function (req, reply) {
 	reply.view('chestionar.html',{'page':'chestionar'})
 })
-fastify.get('/cf', async function (req, reply) {
+fastify.get('/test-examen-vanator.html', async function (req, reply) {
 	reply.view('chestionar-full.html',{'page':'chestionar-full'})
 })
-fastify.get('/cc', async function (req, reply) {
+fastify.get('/teste-examen-vanatoare-capitole.html', async function (req, reply) {
 	reply.view('chestionar-capitole.html',{'page':'chestionar-capitole'})
 })
-fastify.get('/cr', async function (req, reply) {
+fastify.get('/raspunsuri-si-intrebari-examen-vanatoare.html', async function (req, reply) {
 	reply.view('chestionar-raspunsuri.html',{'page':'chestionar-raspunsuri'})
 })
 
@@ -211,7 +211,6 @@ fastify.get('/chestionar.json', async function (req, reply) {
 		while (i<=30) {
 			let rNumber = getRandomArbitrary(1,1001);
 			for (const [index,question] of Object.entries(questions)) {
-				console.log('check',question.id,rNumber);
 				if (question.id==rNumber) {
 					console.log('duplicate found',rNumber);
 					continue;

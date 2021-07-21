@@ -1,7 +1,9 @@
-.container-navbar {
-	margin-top:25px;
-	margin-bottom: 40px;
-}
 .section-box {
 	cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+.container-navbar .section {
+	padding-left:0px !important;
+	padding-right: 0px !important;
+}
 }

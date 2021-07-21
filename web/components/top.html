@@ -1,6 +1,6 @@
 <div id="menu">
-	<div class="container">
-		<div class="section pb-0">
+	<div class="container container-navbar">
+		<div class="section pb-0 pt-0">
 			<nav class="navbar is-info " role="navigation" aria-label="main navigation">
 				<div class="navbar-brand">
 				<a role="button" class="navbar-burger" @click="mobileMenuIsOpen=!mobileMenuIsOpen" :class="{'is-active':mobileMenuIsOpen}" aria-label="menu" aria-expanded="false">
@@ -13,10 +13,10 @@
 					<div class="navbar-start">
 		
 						<a href="/" class="navbar-item <%= it.page=='home' ? 'is-active':''%>">Cauta</a>
-						<a href="/c" class="navbar-item <%= it.page=='chestionar' ? 'is-active':''%>">Chestionar</a>
-						<a href="/cf" class="navbar-item <%= it.page=='chestionar-full' ? 'is-active':''%>">Chestionar Intreg</a>
-						<a href="/cc" class="navbar-item <%= it.page=='chestionar-capitole' ? 'is-active':''%>">Chestionar pe Capitole</a>
-						<a href="/cr" class="navbar-item <%= it.page=='chestionar-raspunsuri' ? 'is-active':''%>">Intrebari si Raspunsuri</a>
+						<a href="/chestionar-examen-vanator.html" class="navbar-item <%= it.page=='chestionar' ? 'is-active':''%>">Chestionar</a>
+						<a href="/test-examen-vanator.html" class="navbar-item <%= it.page=='chestionar-full' ? 'is-active':''%>">Chestionar Intreg</a>
+						<a href="/teste-examen-vanatoare-capitole.html" class="navbar-item <%= it.page=='chestionar-capitole' ? 'is-active':''%>">Chestionar pe Capitole</a>
+						<a href="/raspunsuri-si-intrebari-examen-vanatoare.html" class="navbar-item <%= it.page=='chestionar-raspunsuri' ? 'is-active':''%>">Intrebari si Raspunsuri</a>
 					</div>
 				</div>
 			</nav>

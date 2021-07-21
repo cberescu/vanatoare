@@ -157,19 +157,19 @@ fastify.register(require('fastify-static'), {
   //prefix: '/web/', // optional: default '/'
 })
 fastify.get('/', async function (req, reply) {
-	reply.view('index.html',{'page':'home'})
+	reply.view('index.html',{'page':'home','an':new Date().getFullYear()})
 })
 fastify.get('/chestionar-examen-vanator.html', async function (req, reply) {
-	reply.view('chestionar.html',{'page':'chestionar'})
+	reply.view('chestionar.html',{'page':'chestionar','an':new Date().getFullYear()})
 })
 fastify.get('/test-examen-vanator.html', async function (req, reply) {
-	reply.view('chestionar-full.html',{'page':'chestionar-full'})
+	reply.view('chestionar-full.html',{'page':'chestionar-full','an':new Date().getFullYear()})
 })
 fastify.get('/teste-examen-vanatoare-capitole.html', async function (req, reply) {
-	reply.view('chestionar-capitole.html',{'page':'chestionar-capitole'})
+	reply.view('chestionar-capitole.html',{'page':'chestionar-capitole','an':new Date().getFullYear()})
 })
 fastify.get('/raspunsuri-si-intrebari-examen-vanatoare.html', async function (req, reply) {
-	reply.view('chestionar-raspunsuri.html',{'page':'chestionar-raspunsuri'})
+	reply.view('chestionar-raspunsuri.html',{'page':'chestionar-raspunsuri','an':new Date().getFullYear()})
 })
 
 fastify.get('/chestionar.json', async function (req, reply) {

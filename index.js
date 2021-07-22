@@ -88,6 +88,14 @@ fastify.register(require('point-of-view'), {
   }
 })
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+	return array;
+}
+
 oQuestions = JSON.parse(fs.readFileSync(path.join(__dirname,'questions.json'), 'utf8'));
 let capitole = {
 		"1": {
@@ -225,7 +233,15 @@ fastify.get('/chestionar.json', async function (req, reply) {
 		}
 		
 	}
-  return reply.send(questions)
+	let aKeys = shuffleArray(Object.keys(questions));
+	let oNewQuestions = {};
+	
+	for (let i in aKeys) {
+		oNewQuestions[i]=questions[i]
+	}
+
+
+  return reply.send(oNewQuestions)
 })
 
 fastify.get('/all.json', async function (req, reply) {

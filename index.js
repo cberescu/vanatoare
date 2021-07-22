@@ -197,9 +197,11 @@ fastify.get('/chestionar.json', async function (req, reply) {
 			for (const [index,question] of Object.entries(questions)) {
 				if (question.id==rNumber) {
 					console.log('duplicate found',rNumber);
-					continue;
+					rNumber = 0;
+					break;
 				}
 			}
+			if (!rNumber) continue;
 			questions[(totalIntrebari+i)] = oQuestions[rNumber];
 			i++;
 		}
@@ -213,9 +215,11 @@ fastify.get('/chestionar.json', async function (req, reply) {
 			for (const [index,question] of Object.entries(questions)) {
 				if (question.id==rNumber) {
 					console.log('duplicate found',rNumber);
-					continue;
+					rNumber = 0;
+					break;
 				}
 			}
+			if (!rNumber) continue;
 			questions[i] = oQuestions[rNumber];
 			i++;
 		}

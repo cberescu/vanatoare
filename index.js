@@ -235,9 +235,9 @@ fastify.get('/chestionar.json', async function (req, reply) {
 	}
 	let aKeys = shuffleArray(Object.keys(questions));
 	let oNewQuestions = {};
-	
-	for (let i in aKeys) {
-		oNewQuestions[i]=questions[i]
+
+	for (let i=0;i<aKeys.length;i++) {
+		oNewQuestions[i+1]=questions[aKeys[i]]
 	}
 
 

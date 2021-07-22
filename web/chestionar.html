@@ -7,7 +7,7 @@
 <body>
 <main class="wrapper mb-3">
 	<%~ includeFile('./components/top.html',it) %>
-<div id="app">
+<div id="app" v-cloak>
 	
 		<div class="container" v-if="activeQuestion>0 && !testCompleted">
 			<div class="section">

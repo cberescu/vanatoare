@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="ro">
+<head>
+ <title>Teste pentru examenul de vanatoare <%=it.an%></title>
+<%~ includeFile('./components/header.html',it) %>
+
+</head>
+<body>
+<main class="wrapper">
+	<%~ includeFile('./components/top.html',it) %>
+<div id="app" v-cloak>
+		<div class="container">
+			
+		<div class="content">
+			<div class="section">
+				<h1 class="is-size-4">Cauta raspunsul la o intrebare pentru examenul de vanatoare</h1>
+				<div class="control mb-6">
+					<input class="input" type="text" v-model="search" placeholder="">
+				</div>
+			
+				<div  v-for="question in foundQuestions" class="mb-6"  v-if="foundQuestions">
+						<h4>{{question.title}}</h4>
+						
+						<div v-for="(item,name) in question.options" class="message" :class="{'is-primary': question.answer==name}" :key="item"><div class="message-body p-3">{{name}}) {{item}} </div></div>
+						
+					</div>
+				
+				</div>
+			</div>
+		</div>
+</div>
+</main>
+<script src="/js/home.js"></script>
+<script src="/js/menu.js"></script>
+</body>
+</html>

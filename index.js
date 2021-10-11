@@ -167,6 +167,9 @@ fastify.register(require('fastify-static'), {
 fastify.get('/', async function (req, reply) {
 	reply.view('index.html',{'page':'home','an':new Date().getFullYear()})
 })
+fastify.get('/cauta.html', async function (req, reply) {
+	reply.view('cauta.html',{'page':'cauta','an':new Date().getFullYear()})
+})
 fastify.get('/index.html', async function (req, reply) {
 	reply.view('index.html',{'page':'home','an':new Date().getFullYear()})
 })

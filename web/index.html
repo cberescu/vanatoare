@@ -13,17 +13,27 @@
 			
 		<div class="content">
 			<div class="section">
-				<h1 class="is-size-4">Cauta raspunsul la o intrebare pentru examenul de vanatoare</h1>
-				<div class="control mb-6">
-					<input class="input" type="text" v-model="search" placeholder="">
-				</div>
-			
-				<div  v-for="question in foundQuestions" class="mb-6"  v-if="foundQuestions">
-						<h4>{{question.title}}</h4>
-						
-						<div v-for="(item,name) in question.options" class="message" :class="{'is-primary': question.answer==name}" :key="item"><div class="message-body p-3">{{name}}) {{item}} </div></div>
-						
-					</div>
+				<h1 class="is-size-4">Examen grila pentru obținerea permisului de vânătoare permanent</h1>
+				
+<p>Examenul pentru dobândirea permisului de vânătoare permanent se organizează anual, la aceeași dată și în același loc pentru toate organizațiile vânătorești cu sediul în același județ, conform aprobării autorității publice centrale care răspunde de silvicultură. Toate documentele la zi legate de examenul pentru obținerea permisului de vânătoare, cât și legislația curentă le găsiți <a href="https://lege5.ro/Gratuit/gezdonrxge/permisul-de-vanatoare-permanent-regulament">aici</a>.</p>
+
+<p>Examenul este sub forma unui <span class="has-text-weight-bold">test grilă</span>, conținând un set de 30 de întrebări, fiecare întrebare având 3 răspunsuri preformulate dintre care unul este corect. </p>
+ <p>
+Întrebările și răspunsurile menționate sunt formulate având în vedere noțiuni privind domeniul cinegetic din: 
+<ul class="is-italic">
+<li> biologia speciilor ce aparțin faunei de interes cinegetic;</li>
+<li> legislația în domeniul cinegetic;</li>
+<li> etică vânătorească;</li>
+<li> chinologie;</li>
+<li> boli ale vânatului;</li>
+<li> arme de vânătoare.</li>
+</ul>
+</p>
+<p>După corectarea examenului grilă, se declară promovați candidații care au răspuns corect la minim 20 de întrebări, respectiv respinși pe cei care nu realizează acest nivel.</p>
+
+<p>Am realizat acest site pentru a veni în ajutorul viitorilor vânători și a facilita învățarea cat și reușita examenului final. Vă puteți testa nivelul de cunoștințe în timp real cu un <span class="has-text-weight-bold">chestionar întreg</span> alcătuit din 30 grile dispuse aleator simulând examenul propriu-zis, sau puteți completa <span class="has-text-weight-bold">chestionarul pe capitole</span> pentru consolidarea cunoștințelor înainte de completarea chestionarului standard. După testare, odată cu afișarea rezultatului, vor apărea întrebările cu răspunsurile corecte marcate dar și eventualele răspunsuri greșite, astfel încât să cunoasteti punctele tari și punctele slabe, pentru a învăța din ele. </p>
+
+<p style="font-weight:bold;">Succes la examen viitorilor noștri colegi de breaslă! </p>
 				
 				</div>
 			</div>

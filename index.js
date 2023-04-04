@@ -253,7 +253,7 @@ fastify.get('/all.json', async function (req, reply) {
 })
 
 // Run the server!
-fastify.listen(process.env.PORT || 8000, "0.0.0.0", (err, address) => {
+fastify.listen(process.env.PORT || 8002, "0.0.0.0", (err, address) => {
   if (err) throw err
   fastify.log.info(`server listening on ${address}`)
 })

@@ -11,8 +11,6 @@ let oQuestions = {
 
 }
 
-
-
 async function processLineByLine() {
   const fileStream = fs.createReadStream(path.join(__dirname,'intrebari.txt'));
   let lastSecond = 0;
